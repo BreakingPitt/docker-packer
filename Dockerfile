@@ -8,7 +8,7 @@ MAINTAINER Pedro Garcia Rodriguez<pedgarrod@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set environment variable for downloading packer version.
-ENV PACKER_VERSION=0.10.2
+ENV PACKER_VERSION=0.11.0
 
 # build-time variables.
 ARG VCS_REF
