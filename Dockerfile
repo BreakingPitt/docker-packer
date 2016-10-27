@@ -7,6 +7,9 @@ MAINTAINER Pedro Garcia Rodriguez<pedgarrod@gmail.com>
 # Set environment variables for non interactive.
 ENV DEBIAN_FRONTEND noninteractive
 
+# Set environment variable for downloading packer version.
+ENV PACKER_VERSION=0.10.1
+
 # build-time variables.
 ARG VCS_REF
 
@@ -21,9 +24,9 @@ RUN apt-get update \
     && apt-get install -y wget unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && wget -P /tmp/ https://releases.hashicorp.com/packer/0.10.2/packer_0.10.2_linux_amd64.zip \
+    && wget -P /tmp/ https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip \
     && mkdir -p /opt/packer \
-    && unzip /tmp/packer_0.10.2_linux_amd64.zip -d /opt/packer
+    && unzip /tmp/packer_${PACKER_VERSION}_linux_amd64.zip -d /opt/packer
 
 # Volume to store Terraform data.
 VOLUME ["/data"]
