@@ -24,7 +24,7 @@ RUN apt-get update \
     && apt-get install -y wget unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && wget -P /tmp/ https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip \
+    && wget --no-check-certificate -P /tmp/ https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip \
     && mkdir -p /opt/packer \
     && unzip /tmp/packer_${PACKER_VERSION}_linux_amd64.zip -d /opt/packer
 
