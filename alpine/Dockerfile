@@ -12,7 +12,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set environment variable for downloading vault version.
-ENV PACKER_VERSION=0.9.3
+ENV PACKER_VERSION=1.1.3
 
 # Update the apk indexes and installs HashiCorp Vault.
 # Following the best practices for Dockerfiles we do all the apk stuff
