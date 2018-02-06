@@ -1,5 +1,5 @@
 # Base image to be used.
-FROM ubuntu:latest
+FROM ubuntu:17.10
 
 # Maintainer of the Dockerfile.
 LABEL maintainer "Pedro Garcia Rodriguez <pedgarrod@gmail.com>"
@@ -21,7 +21,9 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 # Following the best practices for Dockerfiles we do all the apt stuff
 # in a single line execution for avoid unwanted layers in our docker image.
 RUN apt-get update \
-    && apt-get install -y wget unzip \
+    && apt-get install -y --no-install-recommends \
+       wget \
+       unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && wget --no-check-certificate -P /tmp/ https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip \
