@@ -5,3 +5,5 @@ services:
 script:
   - docker build -t breakingpitt/packer-alpine alpine
   - docker build -t breakingpitt/packer-ubuntu ubuntu
+git:
+  depth: 3
