@@ -12,7 +12,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set environment variable for downloading packer version.
-ENV PACKER_VERSION=0.11.0
+ENV PACKER_VERSION=1.1.3
 
 # build-time variables.
 ARG VCS_REF
