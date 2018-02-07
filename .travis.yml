@@ -7,3 +7,7 @@ script:
   - docker build -t breakingpitt/packer-ubuntu ubuntu
 git:
   depth: 3
+  submodules: false
+branches:
+  only:
+    - master
